@@ -1,4 +1,3 @@
-def newmanImage = "postman/newman:latest"
 def collectionName = "security/Security-postman_collection.json"
 
 pipeline {
@@ -7,7 +6,7 @@ stages {
     stage ("Postman Report") {
           agent {
             docker {
-              image "${newmanImage}"
+              image "postman/newman:latest"
               args '-u 0 -v /var/run/docker.sock:/var/run/docker.sock:rw'
             }
           }
