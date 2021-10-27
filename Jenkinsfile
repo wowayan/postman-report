@@ -3,25 +3,9 @@ def collectionName = "security/Security-postman_collection.json"
 
 pipeline {
   agent none
-
-  options {
-    ansiColor('xterm')
-    buildDiscarder(
-      logRotator(
-        artifactDaysToKeepStr: '',
-        artifactNumToKeepStr: '',
-        daysToKeepStr: '60',
-        numToKeepStr: '50'
-      )
-    )
-    disableConcurrentBuilds()
-    timeout(time: 60, unit: 'MINUTES')
-    timestamps()
-  }
-
-  stages {
+stages {
     stage ("Postman Report") {
-          agent {
+          agent any {
             docker {
               image "${newmanImage}"
               args '-u 0 -v /var/run/docker.sock:/var/run/docker.sock:rw'
