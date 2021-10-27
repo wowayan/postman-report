@@ -4,12 +4,10 @@ pipeline {
   agent none
 stages {
     stage ("Postman Report") {
-          agent any {
             docker {
               image "postman/newman:latest"
               args '-u 0 -v /var/run/docker.sock:/var/run/docker.sock:rw'
             }
-          }
           steps {
             checkout scm
             script {
