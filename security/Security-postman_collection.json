@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "2e53e9c2-1399-47b1-8649-7dbcb25c4f74",
+		"name": "postmanreport",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                        \"limit\":1,\r\n                        \"offset\":0,\r\n                        \"sortBy\": \"Last Name\",\r\n                        \"sortDirection\": \"Asc\"\r\n                            \r\n                        \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1999/customers/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1999",
+					"path": [
+						"customers",
+						"search"
+					]
+				},
+				"description": "Search Customer"
+			},
+			"response": []
+		},
+		{
+			"name": "First Name",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n                        \"firstName\": {\r\n                            \"equals\":\"Amal\",\r\n                            \"_type_\":\"StringFilter\"\r\n                      }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1999/customers/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1999",
+					"path": [
+						"customers",
+						"search"
+					]
+				},
+				"description": "Test"
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Full Records",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:1999/customers/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1999",
+					"path": [
+						"customers",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Programs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1999/loyaltyPrograms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1999",
+					"path": [
+						"loyaltyPrograms"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
