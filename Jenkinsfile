@@ -1,15 +1,17 @@
+def newmanImage = "postman/newman:latest"
 def collectionName = "security/Security-postman_collection.json"
 
 pipeline {
   agent none
 stages {
+    
     stage ("Postman Report") {
-      steps {      
-      docker {
-              image "postman/newman:latest"
+          agent {
+            docker {
+              image "${newmanImage}"
               args '-u 0 -v /var/run/docker.sock:/var/run/docker.sock:rw'
             }
-      }
+          }
           steps {
             checkout scm
             script {
