@@ -1,4 +1,4 @@
-def newmanImage = "postman/newman:latest"
+def newmanImage = "dannydainton/htmlextra:latest"
 
 pipeline {
       agent {
@@ -13,7 +13,7 @@ pipeline {
         checkout scm
         script {
           try {
-            sh "newman run security/Security-postman_collection.json"
+            sh "newman run security/Security-postman_collection.json -r htmlextra"
           } catch (err) {
             error "Caught: ${err}"
             currentBuild.result = 'FAILURE'
