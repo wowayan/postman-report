@@ -13,7 +13,7 @@ pipeline {
         checkout scm
         script {
           try {
-            sh "newman run security/Security-postman_collection.json -r htmlextra --reporter-htmlextra-export ./report.html "
+            sh "newman run security/Security-postman_collection.json -r htmlextra --reporter-htmlextra-export ./postman/report.html "
           } catch (err) {
             error "Caught: ${err}"
             currentBuild.result = 'FAILURE'
