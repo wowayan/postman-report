@@ -2,22 +2,6 @@ def newmanImage = "postman/newman:latest"
 
 pipeline {
   agent none
-
-  options {
-    ansiColor('xterm')
-    buildDiscarder(
-      logRotator(
-        artifactDaysToKeepStr: '',
-        artifactNumToKeepStr: '',
-        daysToKeepStr: '60',
-        numToKeepStr: '50'
-      )
-    )
-    disableConcurrentBuilds()
-    timeout(time: 60, unit: 'MINUTES')
-    timestamps()
-  }
-
   stages {
     stage('Postman-report') {
       agent {
