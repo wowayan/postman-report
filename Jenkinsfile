@@ -1,15 +1,14 @@
 def newmanImage = "postman/newman:latest"
 
 pipeline {
-  agent none
-  stages {
-    stage('Postman-report') {
       agent {
         docker {
           image "${newmanImage}"
           args '--entrypoint='
         }
       }
+  stages {
+    stage('Postman-report') {
       steps {
         checkout scm
         script {
